@@ -518,7 +518,7 @@ class _SearchableDropdownState<T> extends State<SearchableDropdown<T>> {
       ));
     }
     Widget innerItemsWidget;
-    List<Widget> list = List<Widget>();
+    List<Widget> list = [];
     selectedItems?.forEach((item) {
       list.add(widget.selectedValueWidgetFn != null
           ? widget.selectedValueWidgetFn(widget.items[item].value)
@@ -834,7 +834,7 @@ class _DropdownDialogState<T> extends State<DropdownDialog> {
             ? prepareWidget(widget.doneButton,
                 parameter: selectedResult,
                 context: context, stringToWidgetFunction: (string) {
-                return (FlatButton.icon(
+                return (TextButton.icon(
                     onPressed: !valid
                         ? null
                         : () {
@@ -995,7 +995,7 @@ class _DropdownDialogState<T> extends State<DropdownDialog> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                FlatButton(
+                TextButton(
                   onPressed: () {
                     pop();
                   },
